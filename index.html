@@ -8,28 +8,32 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="wrap masthead">
+  <header class="masthead">
     <a class="brand" href="./" aria-label="Кофе снова, главная"><span aria-hidden="true">◉</span> Кофе снова</a>
     <span class="demo">Учебный макет</span>
   </header>
-  <main class="wrap">
+  <main>
     <section class="hero" aria-labelledby="title">
-      <div class="hero-copy">
+      <div class="hero-heading">
         <p class="eyebrow">МОСКВА / ВЫЕЗД МАСТЕРА</p>
-        <h1 id="title">Ремонт кофемашин на дому</h1>
+        <h1 id="title"><span class="hero-title-text">Ремонт кофемашин <span class="accent">на дому</span></span></h1>
+      </div>
+      <div class="hero-copy">
         <dl class="facts">
           <div><dt>Стоимость выезда</dt><dd><strong>500 ₽</strong><small>При ремонте входит в его стоимость.</small></dd></div>
-          <div><dt>Когда приедет мастер</dt><dd><strong>Сегодня или завтра</strong><small>Точное время — по согласованию.</small></dd></div>
+          <div><dt>Когда приедет мастер</dt><dd><strong>Мастер будет у вас через час</strong></dd></div>
           <div><dt>Ремонт на месте</dt><dd><strong>Обычно 1–2 часа</strong><small>Если нужна деталь, срок уточняется после диагностики.</small></dd></div>
         </dl>
         <a class="button" href="#problem">Описать поломку <span aria-hidden="true">↓</span></a>
       </div>
-      <img class="hero-photo" src="repair-workshop.jpg" width="1254" height="1254" alt="Мастер ремонтирует кофемашину со снятой боковой панелью">
+      <div class="hero-media">
+        <img class="hero-photo" src="coffee-repair-kitchen.jpg" width="1448" height="1086" alt="Мастер ремонтирует автоматическую кофемашину на столешнице светлой домашней кухни">
+      </div>
     </section>
-    <section class="request" aria-labelledby="request-title">
+    <section class="request light-section" aria-labelledby="request-title">
       <div>
         <p class="eyebrow">УЧЕБНАЯ ЗАЯВКА</p>
-        <h2 id="request-title">Что случилось с кофемашиной?</h2>
+        <h2 id="request-title">Что случилось <span class="accent">с кофемашиной?</span></h2>
         <p>Опишите, что изменилось: например, машина перестала наливать кофе или под ней появилась вода.</p>
       </div>
       <form id="repair-form">
@@ -37,13 +41,56 @@
         <textarea id="problem" rows="4" required maxlength="500" aria-describedby="form-note" placeholder="Например, машина гудит, но кофе не льётся"></textarea>
         <label for="model">Марка и модель <span>(обязательно)</span></label>
         <input id="model" type="text" required maxlength="100" placeholder="Например, De’Longhi Magnifica">
-        <p class="note" id="form-note">Не указывайте телефон или адрес. Данные не отправляются и не сохраняются.</p>
+        <label for="phone">Телефон для связи <span>(обязательно)</span></label>
+        <input id="phone" type="tel" autocomplete="tel" required maxlength="32" aria-describedby="form-note" placeholder="+7 (___) ___-__-__">
+        <p class="note" id="form-note">Не указывайте адрес. Данные не отправляются и не сохраняются.</p>
         <button class="button" id="submit-request" type="submit" disabled>Проверить заявку</button>
         <p id="status" role="status"></p>
         <noscript><p>Для проверки учебной заявки включите JavaScript.</p></noscript>
       </form>
     </section>
+    <section class="machine-types" aria-labelledby="machine-types-title">
+      <h2 id="machine-types-title">Какая у вас <span class="accent">кофемашина?</span></h2>
+      <fieldset class="type-options">
+        <legend>Выберите тип кофемашины для заявки</legend>
+        <label class="type-option">
+          <img src="machine-drip.jpg" alt="" loading="lazy" decoding="async">
+          <span><input type="radio" name="machine-type" value="Капельная" form="repair-form"> Капельная</span>
+        </label>
+        <label class="type-option">
+          <img src="machine-espresso.jpg" alt="" loading="lazy" decoding="async">
+          <span><input type="radio" name="machine-type" value="Рожковая" form="repair-form"> Рожковая</span>
+        </label>
+        <label class="type-option">
+          <img src="machine-automatic.jpg" alt="" loading="lazy" decoding="async">
+          <span><input type="radio" name="machine-type" value="Автоматическая" form="repair-form"> Автоматическая</span>
+        </label>
+      </fieldset>
+    </section>
+    <section class="repair-brands light-section" aria-labelledby="repair-brands-title">
+      <h2 id="repair-brands-title">Мы ремонтируем:</h2>
+      <ul class="brand-grid" role="list">
+        <li><img src="brand-logos/jura.png" alt="Jura" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/philips.png" alt="Philips" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/saeco.png" alt="Saeco" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/gaggia.png" alt="Gaggia" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/bosch.png" alt="Bosch" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/siemens.png" alt="Siemens" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/krups.png" alt="Krups" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/melitta.png" alt="Melitta" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/miele.png" alt="Miele" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/smeg.png" alt="Smeg" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/nespresso.png" alt="Nespresso" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/kitchenaid.png" alt="KitchenAid" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/breville.png" alt="Breville" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/braun.png" alt="Braun" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/electrolux.png" alt="Electrolux" loading="lazy" decoding="async"></li>
+        <li><img src="brand-logos/beko.png" alt="Beko" loading="lazy" decoding="async"></li>
+      </ul>
+    </section>
   </main>
-  <footer class="wrap">«Кофе снова» — вымышленная компания. Цены и сроки приведены для примера.</footer>
+  <footer>
+    <p>«Кофе снова» — вымышленная компания. Цены и сроки приведены для примера.</p>
+  </footer>
 </body>
 </html>
